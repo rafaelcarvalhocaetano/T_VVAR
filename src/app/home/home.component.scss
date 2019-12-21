@@ -1,0 +1,28 @@
+@import '../../assets/styles/vvar_color.scss';
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 12vh;
+  background-color: $vvar-color-medium;
+  .item-nav {
+    background-color: #FFF;
+    display: flex;
+    float: right;
+    .item-list {
+      padding: 5px 25px;
+      margin: 10px 0;
+      display: flex;
+      box-sizing: border-box;
+      cursor: pointer;
+      .item-active {
+       padding: 10px 0;
+      }
+      &:nth-child(-n + 2) {
+        border-right: 1px solid #CCC;
+      }
+    }
+    
+  }
+}
