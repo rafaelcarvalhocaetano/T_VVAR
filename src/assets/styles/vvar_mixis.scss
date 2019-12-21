@@ -1,7 +1,3 @@
-@mixin desktop-xd {
-  @media (min-width: 1440px) { @content; }
-}
-
 @mixin table-xd {
   @media (min-width: 1024px) and (max-width: 1440px) { @content; }
 }
