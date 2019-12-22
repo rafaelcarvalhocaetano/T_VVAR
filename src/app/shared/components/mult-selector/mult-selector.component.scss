@@ -1,0 +1,32 @@
+@import '../../../../assets/styles/vvar_color.scss';
+
+.mult-selector {
+  width: 100%;
+  .mtl {
+    margin-bottom: 10px;
+    font-size: 14px;    
+    font-family: $font-family;
+    color: $vvar-color-default;
+  }
+  .mtl-slt {
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+    border: 1px solid $vvar-color-mono;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent url('../../../../assets/svg/icon.svg') 98.5% no-repeat;
+    color: $vvar-color-default;
+    cursor: pointer;
+    .item-mtl {
+      font-family: $font-family;
+      color: $vvar-color-default; 
+      font-size: 18px;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

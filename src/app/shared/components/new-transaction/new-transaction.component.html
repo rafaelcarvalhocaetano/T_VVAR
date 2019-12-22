@@ -1,1 +1,20 @@
-<p>new-transaction works!</p>
+<form class="new-transaction" [formGroup]="form">
+  <p class="title-transaction">{{ title }}</p>
+  <div class="item">
+    <vvar-selector class="control" [title]="'Tipo de transação'"></vvar-selector>
+    <vvar-input class="control mcd"
+      formControlName="productName"
+      [label]="'Nome da mercadoria'"
+      [isPrice]="false"
+      [id]="'name-mcd'"
+      [placeholder]="'Mercadoria'"></vvar-input>
+
+    <vvar-input class="control"
+      formControlName="price"
+      [label]="'Valor'"
+      [isPrice]="true"
+      [id]="'price'"
+      [placeholder]="'R$ 0,00'"></vvar-input>
+  </div>
+  <button class="btn-send" type="submit" (click)="send()">{{ btnText }}</button>
+</form>

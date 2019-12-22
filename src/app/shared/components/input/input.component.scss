@@ -3,23 +3,19 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
   width: 100%;
   .lbl-input {
-    width: 100%;
     margin-bottom: 10px;
-    font-size: 16px;    
+    font-size: 14px;    
     font-family: $font-family;
-    color: $vvar-color-fonts;
+    color: $vvar-color-default;
   }
   .input-control {
-    width: 100%;
     border: 1px solid $vvar-color-mono;
     border-radius: 3px;
-    padding: 5px;
-    font-size: 18px;
-    color: $vvar-color-fonts;
+    padding: 7px;
+    font-size: 14px;
+    color: $vvar-color-default;
     &:focus {
       outline: none;
     }

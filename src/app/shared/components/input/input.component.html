@@ -1,4 +1,5 @@
 <div class="input-group">
-  <label class="lbl-input" for="ipt">Nome da mercadoria</label>
-  <input class="input-control" type="text" placeholder="Input" id="ipt" name="ipt" [(ngModel)]="value">
+  <label class="lbl-input" [for]="'ipt-'+id">{{ label }}</label>
+  <input class="input-control" type="text" [placeholder]="placeholder" 
+    [id]="'ipt-'+id" name="ipt" (input)="getValue($event.target.value)" [(ngModel)]="value">
 </div>
