@@ -20,9 +20,10 @@ export class InputComponent implements ControlValueAccessor {
   @Input() public isPrice: boolean;
   @Input() public id = '';
   @Input() public label: string;
+  @Input() public placeholder = '';
 
-  @Input()
-  public placeholder = '';
+  public onChange: (_: string) => void = () => {};
+  public onTouched: (_: string) => void = () => {};
 
   get value() {
     return this.innerValue;
@@ -42,9 +43,6 @@ export class InputComponent implements ControlValueAccessor {
       this.onChange(data);
     }
   }
-
-  public onChange: (_: string) => void = () => {};
-  public onTouched: (_: string) => void = () => {};
 
   writeValue(data: string): void {
     if (data !== this.innerValue) {

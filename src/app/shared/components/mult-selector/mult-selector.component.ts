@@ -1,18 +1,59 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'vvar-selector',
   templateUrl: './mult-selector.component.html',
-  styleUrls: ['./mult-selector.component.scss']
+  styleUrls: ['./mult-selector.component.scss'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => MultSelectorComponent),
+    multi: true
+  }]
 })
-export class MultSelectorComponent implements OnInit {
+export class MultSelectorComponent implements ControlValueAccessor {
 
-  @Input()
-  public title: string;
 
-  constructor() { }
+  private innerValue: string;
 
-  ngOnInit() {
+  @Input() public isDisabled?: boolean;
+  @Input() public isPrice: boolean;
+  @Input() public id = '';
+  @Input() public label: string;
+  @Input() public title: string;
+  @Input() public list: string [] = ['1', '2', '3'];
+
+  public onChange: (_: string) => void = () => {};
+  public onTouched: (_: string) => void = () => {};
+
+  get value() {
+    return this.innerValue;
+  }
+
+  set value(data: string) {
+    if (data !== this.innerValue) {
+      this.innerValue = data;
+      this.onChange(data);
+    }
+  }
+
+  writeValue(data: string): void {
+    if (data !== this.innerValue) {
+      this.innerValue = data;
+      this.onChange(data);
+    }
+  }
+
+  registerOnChange(fn: (value: string) => void): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: (value: string) => void): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    this.isDisabled = isDisabled;
   }
 
 }
