@@ -1,0 +1,27 @@
+@import '../../../../assets/styles/vvar_color.scss';
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  .lbl-input {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;    
+    font-family: $font-family;
+    color: $vvar-color-fonts;
+  }
+  .input-control {
+    width: 100%;
+    border: 1px solid $vvar-color-mono;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 18px;
+    color: $vvar-color-fonts;
+    &:focus {
+      outline: none;
+    }
+  }
+}
