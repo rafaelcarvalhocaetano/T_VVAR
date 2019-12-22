@@ -29,8 +29,8 @@ export class NewTransactionComponent implements OnInit {
 
   private initForm() {
     this.form = this.fb.group({
-      transactionType: [null],
-      productName: [null],
+      transaction: [null],
+      product: [null],
       price: [null]
     });
   }

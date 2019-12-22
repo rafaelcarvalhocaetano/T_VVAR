@@ -1,9 +1,10 @@
-<form class="new-transaction" [formGroup]="form">
+<form [formGroup]="form" class="new-transaction">
   <p class="title-transaction">{{ title }}</p>
   <div class="item">
     <vvar-selector class="control" [title]="'Tipo de transação'"></vvar-selector>
+    
     <vvar-input class="control mcd"
-      formControlName="productName"
+      formControlName="product"
       [label]="'Nome da mercadoria'"
       [isPrice]="false"
       [id]="'name-mcd'"
