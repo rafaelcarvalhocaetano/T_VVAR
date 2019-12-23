@@ -1,1 +1,21 @@
-<p>table works!</p>
+<div class="ext-container">
+  <h3 class="tbl-title">Extrato de transações</h3>
+  <div class="ext-header">
+    <p class="item snl"></p>
+    <p class="item ext-mcr">Mercadoria</p>
+    <p class="item ext-desc">Valor</p>
+  </div>
+  <div class="ext-body" *ngFor="let item of list">
+    <p class="item snl">{{ item.sinal }}</p>
+    <p class="item ext-mcr">{{ item.desc }}</p>
+    <p class="item ext-desc">{{ item.value }}</p>
+  </div>
+  <div class="ext-total">
+    <p class="item snl"></p>
+    <p class="item ext-mcr">Total</p>
+    <p class="item ext-desc">
+      12.000,00
+      <span>[Lucro]</span>
+    </p>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+@import './vvar_color.scss';
+
 @mixin table-xd {
   @media (min-width: 1024px) and (max-width: 1440px) { @content; }
 }
@@ -8,4 +10,31 @@
 
 @mixin mobile {
   @media (max-width: 768px) { @content; }
+}
+
+@mixin tbl {
+  .item  {
+    height: auto;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #CCC;
+  }
+  .snl {
+    width: 1%;  
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .ext-mcr {
+    width: 10%;
+    flex-grow: 2;
+  }
+  .ext-desc {
+    width: 80%;
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+  }
 }

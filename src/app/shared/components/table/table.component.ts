@@ -7,6 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
+  public list = [
+    {id: 1, sinal: '-', desc: 'PCd ddddddddddddddddddddddd dddddddddddddddddddddddddd ', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
+  ];
+
+
   constructor() { }
 
   ngOnInit() {
