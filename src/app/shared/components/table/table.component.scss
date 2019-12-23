@@ -20,12 +20,19 @@
     text-align: center;
     font-size: 24px;
     font-weight: 600;
-    margin: 0 0 30px 0;
+    margin: 0 0 10px 0;
+    position: sticky;
+    top: 0;
+    background-color: #FFF;
+    padding: 10px 0;
   }
   .ext-header {
+    position: sticky;
+    top: 35px;
     display: flex;
     font-weight: 600;
     font-size: 16px;
+    background-color: #FFF;
     @include tbl();
   }
   .ext-body {
@@ -50,6 +57,27 @@
         font-size: 10px;
         display: flex;
       }
+    }
+  }
+}
+
+@include mobile {
+  .ext-container {
+    .ext-header {
+      padding: 0 25px;
+    }
+    .ext-body {
+      .snl {
+        padding: 0 10px;
+      }
+      padding: 0 10px;
+
+      .ext-mcr {
+        width: 50%;
+      }
+    }
+    .ext-total {
+      padding: 0 10px 0 25px;
     }
   }
 }
