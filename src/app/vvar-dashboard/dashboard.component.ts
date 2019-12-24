@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TransactionService } from '../core/service/service.service';
+import { Transaction } from '../core/model/transaction';
 
 @Component({
   selector: 'vvar-dashboard',
@@ -8,17 +8,17 @@ import { TransactionService } from '../core/service/service.service';
 })
 export class DashboardComponent {
 
+  public list: Transaction[] = [];
+  public total: number;
+
   public dataModel = {
     title: 'Nova transação',
     btnText: 'Adicionar transação'
   };
 
-  constructor(
-    private service: TransactionService
-  ) {  }
-
-  public getData(event) {
-    this.service.create(event);
+  public listTable(event) {
+    this.total = event.total;
+    this.list = event.list;
   }
 
 }

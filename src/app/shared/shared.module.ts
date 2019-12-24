@@ -21,9 +21,6 @@ import { NewTransactionComponent } from './components/new-transaction/new-transa
     FormsModule,
     ReactiveFormsModule
   ],
-  entryComponents: [
-    NewTransactionComponent
-  ],
   exports: [
     CommonModule,
     FormsModule,

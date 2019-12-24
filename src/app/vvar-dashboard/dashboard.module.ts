@@ -13,6 +13,6 @@ import { SharedModule } from '../shared/shared.module';
     DashboardRoutingModule,
     SharedModule
   ],
-  exports: [DashboardComponent]
+  exports: [DashboardComponent],
 })
 export class DashboardModule { }

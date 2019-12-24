@@ -1,4 +1,5 @@
 @import '../../../../assets/styles/vvar_color.scss';
+@import '../../../../assets/styles/vvar_mixis.scss';
 
 .mult-selector {
   width: 100%;
@@ -17,7 +18,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: transparent url('../../../../assets/svg/icon.svg') 98.5% no-repeat;
+    background: transparent url('../../../../assets/svg/icon.svg') 97% no-repeat;
     color: $vvar-color-default;
     cursor: pointer;
     .item-mtl {
@@ -27,6 +28,31 @@
     }
     &:focus {
       outline: none;
+    }
+  }
+}
+
+@include table-xd {
+  .mult-selector {
+    .mtl-slt {
+      background: transparent url('../../../../assets/svg/icon.svg') 95% no-repeat;
+    }
+  }
+}
+
+@include table-md {
+  .mult-selector {
+    .mtl-slt {
+      background: transparent url('../../../../assets/svg/icon.svg') 94% no-repeat;
+    }
+  }
+}
+
+
+@include mobile {
+  .mult-selector {
+    .mtl-slt {
+      background: transparent url('../../../../assets/svg/icon.svg') 98% no-repeat;
     }
   }
 }
