@@ -6,15 +6,23 @@ import { EXTTable } from '../model/transaction';
 })
 export class TransactionService {
 
+  public list: any[] = [];
+
 
   public findAll() {
     return JSON.parse(localStorage.getItem('List'));
   }
 
   public create(data: EXTTable) {
-    const list = [];
-    list.push(data);
-    localStorage.setItem('List', JSON.stringify(list));
+    this.list.push(data);
+    this.list.map(x => {
+      if (x.transaction === 'compra') {
+        x.sinal = '+';
+      } else {
+        x.sinal = '-';
+      }
+    });
+    localStorage.setItem('List', JSON.stringify(this.list));
   }
 
   public delete() {

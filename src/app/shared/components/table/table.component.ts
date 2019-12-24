@@ -24,13 +24,8 @@ export class TableComponent implements OnInit {
   }
 
   public get() {
-    this.service.findAll().map((x, i: number) => {
+    this.service.findAll().map((x: any, i: number) => {
       let total = 0;
-      if (i % 2 === 0) {
-        x.sinal = '+';
-      } else {
-        x.sinal = '-';
-      }
       x.price = Number.parseInt(x.price);
       total = total + Number.parseFloat(x.price);
       this.valueData = total;
