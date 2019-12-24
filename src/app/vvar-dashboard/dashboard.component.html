@@ -1,8 +1,9 @@
 <div class="container">
   <div class="item-dash">
     <vvar-transaction 
-    [title]="'Nova transação'"
-    [btnText]="'Adicionar transação'"></vvar-transaction>
+    [title]="dataModel.title"
+    [btnText]="dataModel.btnText"
+    (sendValue)="getData($event)"></vvar-transaction>
     <vvar-table class="tbl"></vvar-table>
   </div>
 </div>

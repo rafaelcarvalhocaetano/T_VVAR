@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { EXTTable } from '../../../core/model/transaction';
+import { TransactionService } from 'src/app/core/service/service.service';
+
+
 @Component({
   selector: 'vvar-table',
   templateUrl: './table.component.html',
@@ -7,33 +11,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  public list = [
-    {id: 1, sinal: '-', desc: 'Lorem ipsum vai logo essa merda ', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-    {id: 1, sinal: '-', desc: 'PC', value: '12.000,00'},
-  ];
+  public list: EXTTable[] = [];
+  public valueData: number;
+  public listAll: [];
 
-
-  constructor() { }
+  constructor(
+    private service: TransactionService
+  ) { }
 
   ngOnInit() {
+    this.get();
+  }
+
+  public get() {
+    this.service.findAll().map((x, i: number) => {
+      let total = 0;
+      if (i % 2 === 0) {
+        x.sinal = '+';
+      } else {
+        x.sinal = '-';
+      }
+      x.price = Number.parseInt(x.price);
+      total = total + Number.parseFloat(x.price);
+      this.valueData = total;
+      this.list.push(x);
+    });
+  }
+
+  public delete() {
+    return this.service.delete();
   }
 
 }

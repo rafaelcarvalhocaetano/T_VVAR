@@ -1,24 +1,29 @@
 <form [formGroup]="form" class="new-transaction">
   <p class="title-transaction">{{ title }}</p>
   <div class="item">
-    <vvar-selector class="control" 
+    <vvar-selector class="control"
       formControlName="transaction"  
-      [title]="'Tipo de transação'"></vvar-selector>
+      [id]="'mtl'"
+      [label]="'Tipo de transação'"
+      [label]="'Tipo de transação'"
+      [isDisabled]="form.get('transaction').disabled"></vvar-selector>
     
     <vvar-input class="control mcd"
       formControlName="product"
       [label]="'Nome da mercadoria'"
       [isPrice]="false"
       [id]="'name-mcd'"
+      [isDisabled]="form.get('product').disabled"
       [placeholder]="'Mercadoria'"></vvar-input>
 
     <vvar-input class="control"
       formControlName="price"
       [label]="'Valor'"
+      [isDisabled]="form.get('price').disabled"
       [isPrice]="true"
       [id]="'price'"
       [placeholder]="'R$ 0,00'"></vvar-input>
   </div>
-  <button class="btn-send" type="submit" (click)="send()">{{ btnText }}</button>
+  <button class="btn-send" type="submit" (click)="send()" [disabled]="form.disabled">{{ btnText }}</button>
 </form>
 <hr class="mdl">

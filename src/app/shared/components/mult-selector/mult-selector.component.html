@@ -1,6 +1,6 @@
 <div class="mult-selector">
-<p class="mtl">{{ title }}</p>
+<p class="mtl">{{ label }}</p>
 <select class="mtl-slt" [(ngModel)]="value">
-  <option class="item-mtl" *ngFor="let item of list" [value]="item">{{ item }}</option>
+  <option class="item-mtl" *ngFor="let item of list" [value]="item.desc">{{ item.desc }}</option>
 </select>
 </div>

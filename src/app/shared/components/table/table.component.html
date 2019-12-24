@@ -7,14 +7,15 @@
   </div>
   <div class="ext-body" *ngFor="let item of list">
     <p class="item snl">{{ item.sinal }}</p>
-    <p class="item ext-mcr">{{ item.desc }}</p>
-    <p class="item ext-desc">{{ item.value }}</p>
+    <p class="item ext-mcr">{{ item.product }}</p>
+    <p class="item ext-desc">{{ item.price | currency:'BRL':true }}</p>
   </div>
   <div class="ext-total">
     <p class="item snl"></p>
     <p class="item ext-mcr">Total</p>
     <p class="item ext-desc">
-      12.000,00
+      {{ valueData | currency:'BRL':true }}
+      <!-- {{ valueData }} -->
       <span>[Lucro]</span>
     </p>
   </div>

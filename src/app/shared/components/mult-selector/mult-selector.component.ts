@@ -17,11 +17,13 @@ export class MultSelectorComponent implements ControlValueAccessor {
   private innerValue: string;
 
   @Input() public isDisabled?: boolean;
-  @Input() public isPrice: boolean;
   @Input() public id = '';
   @Input() public label: string;
-  @Input() public title: string;
-  @Input() public list: string [] = ['1', '2', '3'];
+  @Input() public list = [
+    {id: 1, desc: 'Compra'},
+    {id: 2, desc: 'Venda'},
+    {id: 3, desc: 'Devolução'},
+  ];
 
   public onChange: (_: string) => void = () => {};
   public onTouched: (_: string) => void = () => {};

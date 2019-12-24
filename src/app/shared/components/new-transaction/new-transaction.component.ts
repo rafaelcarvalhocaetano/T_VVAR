@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { TransactionService } from 'src/app/core/service/service.service';
 
 @Component({
   selector: 'vvar-transaction',
@@ -8,19 +9,15 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class NewTransactionComponent implements OnInit {
 
-  @Input()
-  public title: string;
-
-  @Input()
-  public btnText: string;
-
-  @Output()
-  public senForm = new EventEmitter<any>();
+  @Input() public title: string;
+  @Input() public btnText: string;
+  @Output() public sendValue = new EventEmitter<any>();
 
   public form: FormGroup;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private service: TransactionService
   ) { }
 
   ngOnInit() {
@@ -37,8 +34,10 @@ export class NewTransactionComponent implements OnInit {
 
 
   public send() {
-    this.senForm.emit(this.form.value);
-    console.log('ddd ', this.form.value);
+    const data = this.form.get('price').value.replace(/[^a-z0-9]/, '');
+    this.form.get('price').setValue(data);
+    this.sendValue.emit(this.form.value);
+    this.form.reset();
   }
 
 }
