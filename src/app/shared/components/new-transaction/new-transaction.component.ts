@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TransactionService } from 'src/app/core/service/transaction.service';
 import { Transaction } from 'src/app/core/model/transaction';
 
@@ -27,9 +27,9 @@ export class NewTransactionComponent implements OnInit {
 
   private initForm() {
     this.form = this.fb.group({
-      transaction: [null],
-      product: [null],
-      price: [null]
+      transaction: [null, [Validators.required]],
+      product: [null, [Validators.required]],
+      price: [null, [Validators.required]]
     });
   }
 
@@ -42,20 +42,39 @@ export class NewTransactionComponent implements OnInit {
   }
 
   public getList() {
-    const getPrice = [];
+    const getMore = [];
+    const getLess = [];
+    let more: number;
+    let less: number;
     let total: number;
     if (this.service.findAll() !== null) {
       this.service.findAll().map(x => {
-        getPrice.push(Number(x.price));
-        total = getPrice.reduce((acc, cv) => acc + cv);
+        if (x.transaction === 'Compra') {
+          getMore.push(Number(x.price));
+          more = getMore.reduce((acc, cv) => acc + cv);
+        } else {
+          getLess.push(Number(x.price));
+          less = getLess.reduce((acc, cv) => acc - cv);
+        }
+
+        if (more > less) {
+          total = more - less;
+        } else if (more === less) {
+          total = less - more;
+        } else {
+          total = less - more;
+        }
+        if (x.transaction !== 'Compra') {
+          total = total - x.price;
+        }
       });
-      this.getSend(total, this.service.findAll());
+      this.send(total, this.service.findAll());
     }
   }
 
-  private getSend(v: number, getList: Transaction[]) {
+  private send(value: number, getList: Transaction[]) {
     this.sendValue.emit({
-      total: v,
+      total: value,
       list: getList
     });
   }

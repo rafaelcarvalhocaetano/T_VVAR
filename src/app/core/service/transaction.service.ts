@@ -14,7 +14,7 @@ export class TransactionService {
 
   public create(data: Transaction) {
     this.list.push(data);
-    this.list.map(x => {
+    this.list.map((x: any) => {
       if (x.transaction === 'Compra') {
         x.sinal = '+';
       } else {
