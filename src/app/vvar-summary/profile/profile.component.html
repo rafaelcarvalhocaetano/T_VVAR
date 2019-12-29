@@ -1,4 +1,6 @@
 <form [formGroup]="form" class="profile-container">
+
+  <!-- PHOTO  -->
   <div class="pfl-photo">
     <img class="pfl-img" src="../../../assets/svg/vn.jpg" alt="User">
     <div class="cdv">
@@ -32,7 +34,7 @@
       <div class="nick-name">
         <p class="nick">Wollner</p>-<p class="nname">Giovani José Campos</p>
       </div>
-      <button type="submit" class="btn-edit" (click)="edited()">{{ isEdit ? 'Salvar' : 'Editar Perfil' }}</button>
+      <button type="submit" class="btn-edit" id="pfl-btn-submited" (click)="edited()">{{ isEdit ? 'Salvar' : 'Editar Perfil' }}</button>
     </div>
 
     <!-- location -->
@@ -43,10 +45,10 @@
       <!-- <p>São Paulo - Brasil</p> -->
       <div class="loc">
         <label for="state">{{ form.get('state').value ? form.get('state').value : 'test' }}</label>
-        <input type="text" id="state" formControlName="state">
+        <input type="text" id="state" formControlName="state" id="pfl-input-location-state">
         <span>-</span>
         <label for="country">{{ form.get('country').value ? form.get('country').value : 'FFFFFFF' }}</label>
-        <input type="text" id="country" formControlName="country">
+        <input type="text" id="country" formControlName="country" id="pfl-input-location-country">
       </div>
       <svg id="ic-country" width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0H21.987V16H0V0Z" fill="#009B3A"/>
@@ -60,7 +62,7 @@
     <ul class="pfl-phone">
       <li class="pfl-item">
         <p>Telefone principal</p>
-        <a class="pfl-edt-phone" href="tel:form.get('phone_main').value" *ngIf="!isEdit">
+        <a class="pfl-edt-phone" id="pfl-link-phone-main" href="tel:form.get('phone_main').value" *ngIf="!isEdit">
           <svg id="ic-phone" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.66683 1.66659V12.3333H8.3335V1.66659H1.66683ZM1.00016 0.333252H9.00016C9.17697 0.333252 9.34654 0.40349 9.47157 0.528514C9.59659 0.653538 9.66683 0.823108 9.66683 0.999919V12.9999C9.66683 13.1767 9.59659 13.3463 9.47157 13.4713C9.34654 13.5963 9.17697 13.6666 9.00016 13.6666H1.00016C0.823352 13.6666 0.653783 13.5963 0.528758 13.4713C0.403734 13.3463 0.333496 13.1767 0.333496 12.9999V0.999919C0.333496 0.823108 0.403734 0.653538 0.528758 0.528514C0.653783 0.40349 0.823352 0.333252 1.00016 0.333252ZM5.00016 10.3333C5.17697 10.3333 5.34654 10.4035 5.47157 10.5285C5.59659 10.6535 5.66683 10.8231 5.66683 10.9999C5.66683 11.1767 5.59659 11.3463 5.47157 11.4713C5.34654 11.5963 5.17697 11.6666 5.00016 11.6666C4.82335 11.6666 4.65378 11.5963 4.52876 11.4713C4.40373 11.3463 4.3335 11.1767 4.3335 10.9999C4.3335 10.8231 4.40373 10.6535 4.52876 10.5285C4.65378 10.4035 4.82335 10.3333 5.00016 10.3333Z" fill="#D6283D"/>
           </svg>
@@ -70,14 +72,13 @@
           <svg id="ic-phone" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.66683 1.66659V12.3333H8.3335V1.66659H1.66683ZM1.00016 0.333252H9.00016C9.17697 0.333252 9.34654 0.40349 9.47157 0.528514C9.59659 0.653538 9.66683 0.823108 9.66683 0.999919V12.9999C9.66683 13.1767 9.59659 13.3463 9.47157 13.4713C9.34654 13.5963 9.17697 13.6666 9.00016 13.6666H1.00016C0.823352 13.6666 0.653783 13.5963 0.528758 13.4713C0.403734 13.3463 0.333496 13.1767 0.333496 12.9999V0.999919C0.333496 0.823108 0.403734 0.653538 0.528758 0.528514C0.653783 0.40349 0.823352 0.333252 1.00016 0.333252ZM5.00016 10.3333C5.17697 10.3333 5.34654 10.4035 5.47157 10.5285C5.59659 10.6535 5.66683 10.8231 5.66683 10.9999C5.66683 11.1767 5.59659 11.3463 5.47157 11.4713C5.34654 11.5963 5.17697 11.6666 5.00016 11.6666C4.82335 11.6666 4.65378 11.5963 4.52876 11.4713C4.40373 11.3463 4.3335 11.1767 4.3335 10.9999C4.3335 10.8231 4.40373 10.6535 4.52876 10.5285C4.65378 10.4035 4.82335 10.3333 5.00016 10.3333Z" fill="#D6283D"/>
           </svg>
-          <input type="tel" formControlName="phone_main">
+          <input type="tel" formControlName="phone_main" id="pfl-input-phone-main">
         </div> 
       </li>
 
-
       <li class="pfl-item">
         <p>Telefone alternativo</p>
-        <a class="pfl-edt-phone" href="tel:form.get('phone_alternative').value" *ngIf="!isEdit">
+        <a id="pfl-link-phone-alteranative" class="pfl-edt-phone" href="tel:form.get('phone_alternative').value" *ngIf="!isEdit">
           <svg id="ic-phone" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.66683 1.66659V12.3333H8.3335V1.66659H1.66683ZM1.00016 0.333252H9.00016C9.17697 0.333252 9.34654 0.40349 9.47157 0.528514C9.59659 0.653538 9.66683 0.823108 9.66683 0.999919V12.9999C9.66683 13.1767 9.59659 13.3463 9.47157 13.4713C9.34654 13.5963 9.17697 13.6666 9.00016 13.6666H1.00016C0.823352 13.6666 0.653783 13.5963 0.528758 13.4713C0.403734 13.3463 0.333496 13.1767 0.333496 12.9999V0.999919C0.333496 0.823108 0.403734 0.653538 0.528758 0.528514C0.653783 0.40349 0.823352 0.333252 1.00016 0.333252ZM5.00016 10.3333C5.17697 10.3333 5.34654 10.4035 5.47157 10.5285C5.59659 10.6535 5.66683 10.8231 5.66683 10.9999C5.66683 11.1767 5.59659 11.3463 5.47157 11.4713C5.34654 11.5963 5.17697 11.6666 5.00016 11.6666C4.82335 11.6666 4.65378 11.5963 4.52876 11.4713C4.40373 11.3463 4.3335 11.1767 4.3335 10.9999C4.3335 10.8231 4.40373 10.6535 4.52876 10.5285C4.65378 10.4035 4.82335 10.3333 5.00016 10.3333Z" fill="#D6283D"/>
           </svg>
@@ -87,34 +88,131 @@
           <svg id="ic-phone" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.66683 1.66659V12.3333H8.3335V1.66659H1.66683ZM1.00016 0.333252H9.00016C9.17697 0.333252 9.34654 0.40349 9.47157 0.528514C9.59659 0.653538 9.66683 0.823108 9.66683 0.999919V12.9999C9.66683 13.1767 9.59659 13.3463 9.47157 13.4713C9.34654 13.5963 9.17697 13.6666 9.00016 13.6666H1.00016C0.823352 13.6666 0.653783 13.5963 0.528758 13.4713C0.403734 13.3463 0.333496 13.1767 0.333496 12.9999V0.999919C0.333496 0.823108 0.403734 0.653538 0.528758 0.528514C0.653783 0.40349 0.823352 0.333252 1.00016 0.333252ZM5.00016 10.3333C5.17697 10.3333 5.34654 10.4035 5.47157 10.5285C5.59659 10.6535 5.66683 10.8231 5.66683 10.9999C5.66683 11.1767 5.59659 11.3463 5.47157 11.4713C5.34654 11.5963 5.17697 11.6666 5.00016 11.6666C4.82335 11.6666 4.65378 11.5963 4.52876 11.4713C4.40373 11.3463 4.3335 11.1767 4.3335 10.9999C4.3335 10.8231 4.40373 10.6535 4.52876 10.5285C4.65378 10.4035 4.82335 10.3333 5.00016 10.3333Z" fill="#D6283D"/>
           </svg>
-          <input type="tel" formControlName="phone_alternative">
+          <input type="tel" formControlName="phone_alternative" id="pfl-btn-phone-alteranative">
         </div>   
       </li>
     </ul>
 
     <!-- data-email -->
-    <ul class="pfl-email">
-      <li class="pfl-item">
+    <ul class="pfl-phone">
+      <li class="pfl-item mt-less">
         <p>e-mail</p>
-        <a href="">
-          <svg id="ic-email" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="pfl-edt-phone" id="pfl-link-phone-main" href="tel:form.get('email').value" *ngIf="!isEdit">
+          <svg id="ic-phone" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.00016 0H13.0002C13.177 0 13.3465 0.0702379 13.4716 0.195262C13.5966 0.320286 13.6668 0.489856 13.6668 0.666667V11.3333C13.6668 11.5101 13.5966 11.6797 13.4716 11.8047C13.3465 11.9298 13.177 12 13.0002 12H1.00016C0.823352 12 0.653782 11.9298 0.528758 11.8047C0.403734 11.6797 0.333496 11.5101 0.333496 11.3333V0.666667C0.333496 0.489856 0.403734 0.320286 0.528758 0.195262C0.653782 0.0702379 0.823352 0 1.00016 0ZM12.3335 2.82533L7.04816 7.55867L1.66683 2.81067V10.6667H12.3335V2.82533ZM2.0075 1.33333L7.04083 5.77467L12.0015 1.33333H2.0075Z" fill="#D6283D"/>
-          </svg>            
-          <span>corretor@lopes.com.br</span>
+          </svg>  
+          <span>{{ form.get('email').value }}</span>
         </a>   
+        <div class="pfl-edt-phone" *ngIf="isEdit">
+          <svg id="ic-phone" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.00016 0H13.0002C13.177 0 13.3465 0.0702379 13.4716 0.195262C13.5966 0.320286 13.6668 0.489856 13.6668 0.666667V11.3333C13.6668 11.5101 13.5966 11.6797 13.4716 11.8047C13.3465 11.9298 13.177 12 13.0002 12H1.00016C0.823352 12 0.653782 11.9298 0.528758 11.8047C0.403734 11.6797 0.333496 11.5101 0.333496 11.3333V0.666667C0.333496 0.489856 0.403734 0.320286 0.528758 0.195262C0.653782 0.0702379 0.823352 0 1.00016 0ZM12.3335 2.82533L7.04816 7.55867L1.66683 2.81067V10.6667H12.3335V2.82533ZM2.0075 1.33333L7.04083 5.77467L12.0015 1.33333H2.0075Z" fill="#D6283D"/>
+          </svg>
+          <input type="tel" formControlName="email" id="pfl-input-email">
+        </div> 
       </li>
     </ul>
 
     <!-- BIO -->
     <div class="pfl-bio">
       <p class="bio-title">Biografia</p>
-      <p class="bio-description" *ngIf="!isEdit">
-        Doze anos de experiência no setor imobiliário. 
-        Amplo conhecimento sobre diversos tipos de empreendimento para ajudá-lo a 
-        encontrar o melhor investimento para você, tanto residencial quanto comercial.
-      </p>
-      <textarea class="bio-description" type="text" *ngIf="isEdit"></textarea>
+      <p class="bio-description" *ngIf="!isEdit">{{ form.get('bio').value }}</p>
+      <textarea type="text" class="bio-description" formControlName="bio" *ngIf="isEdit"></textarea>
     </div>
 
+    <!-- INFORMAÇÕES BÁSICAS -->
+    <div class="pfl-bin">
+      <p class="pfl-bin-title">Informações básicas</p>
+
+
+      <ul class="pfl-bin-list">
+
+        <!-- CRIAR COMPONENTE -->
+        <li class="ibp pfl-bin-item">
+          <div class="ibp pfl-bin-icon">
+            <svg id="pfl-bin-ic" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.66683 3.33341V1.33341C3.66683 1.1566 3.73707 0.987034 3.86209 0.86201C3.98712 0.736986 4.15669 0.666748 4.3335 0.666748H9.66683C9.84364 0.666748 10.0132 0.736986 10.1382 0.86201C10.2633 0.987034 10.3335 1.1566 10.3335 1.33341V3.33341H13.0002C13.177 3.33341 13.3465 3.40365 13.4716 3.52868C13.5966 3.6537 13.6668 3.82327 13.6668 4.00008V13.3334C13.6668 13.5102 13.5966 13.6798 13.4716 13.8048C13.3465 13.9298 13.177 14.0001 13.0002 14.0001H1.00016C0.823352 14.0001 0.653782 13.9298 0.528758 13.8048C0.403734 13.6798 0.333496 13.5102 0.333496 13.3334V4.00008C0.333496 3.82327 0.403734 3.6537 0.528758 3.52868C0.653782 3.40365 0.823352 3.33341 1.00016 3.33341H3.66683ZM1.66683 10.6667V12.6667H12.3335V10.6667H1.66683ZM1.66683 9.33341H12.3335V4.66675H1.66683V9.33341ZM5.00016 2.00008V3.33341H9.00016V2.00008H5.00016ZM6.3335 7.33341H7.66683V8.66675H6.3335V7.33341Z" fill="#2A2A2A"/>
+            </svg>
+            <p class="pfl-bin-desc">Designação técnica:</p>              
+          </div>
+          <div class="pfl-bin-value">
+            <p>{{ form.get('designacao_tecnica').value }}</p>
+          </div>
+        </li>
+
+        <li class="ibp pfl-bin-item">
+          <div class="ibp pfl-bin-icon">
+            <svg id="pfl-bin-ic" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.3333 13.6666H0.666667C0.489856 13.6666 0.320286 13.5963 0.195262 13.4713C0.0702379 13.3463 0 13.1767 0 12.9999V0.999919C0 0.823108 0.0702379 0.653538 0.195262 0.528514C0.320286 0.40349 0.489856 0.333252 0.666667 0.333252H11.3333C11.5101 0.333252 11.6797 0.40349 11.8047 0.528514C11.9298 0.653538 12 0.823108 12 0.999919V12.9999C12 13.1767 11.9298 13.3463 11.8047 13.4713C11.6797 13.5963 11.5101 13.6666 11.3333 13.6666ZM10.6667 12.3333V1.66659H1.33333V12.3333H10.6667ZM3.33333 4.99992H8.66667V6.33325H3.33333V4.99992ZM3.33333 7.66659H8.66667V8.99992H3.33333V7.66659Z" fill="#2A2A2A"/>
+            </svg>              
+            <p class="pfl-bin-desc">Creci:</p>              
+          </div>
+          <div class="pfl-bin-value">
+            <p>{{ form.get('creci').value }}</p>
+          </div>
+        </li>
+
+        <li class="ibp pfl-bin-item">
+          <div class="ibp pfl-bin-icon">
+            <svg id="pfl-bin-ic" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.9998 10.6667H15.3332V12H0.666504V10.6667H1.99984V0.666667C1.99984 0.489856 2.07008 0.320286 2.1951 0.195262C2.32012 0.0702379 2.48969 0 2.6665 0H9.33317C9.50998 0 9.67955 0.0702379 9.80457 0.195262C9.9296 0.320286 9.99984 0.489856 9.99984 0.666667V10.6667H12.6665V5.33333H11.3332V4H13.3332C13.51 4 13.6796 4.07024 13.8046 4.19526C13.9296 4.32029 13.9998 4.48986 13.9998 4.66667V10.6667ZM3.33317 1.33333V10.6667H8.6665V1.33333H3.33317ZM4.6665 5.33333H7.33317V6.66667H4.6665V5.33333ZM4.6665 2.66667H7.33317V4H4.6665V2.66667Z" fill="#2A2A2A"/>
+            </svg>                         
+            <p class="pfl-bin-desc">Empresa:</p>              
+          </div>
+          <div class="pfl-bin-value">
+            <p>{{ form.get('enterprise').value }}</p>
+          </div>
+        </li>
+
+        <pre>
+          {{
+            form.value | json
+          }}
+        </pre>
+        <!-- IDIOMA -->
+        <li class="pfl-bin-item">
+          <div class="pfl-bin-icon mt">
+            <svg id="pfl-bin-ic" width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.9998 10.6667H15.3332V12H0.666504V10.6667H1.99984V0.666667C1.99984 0.489856 2.07008 0.320286 2.1951 0.195262C2.32012 0.0702379 2.48969 0 2.6665 0H9.33317C9.50998 0 9.67955 0.0702379 9.80457 0.195262C9.9296 0.320286 9.99984 0.489856 9.99984 0.666667V10.6667H12.6665V5.33333H11.3332V4H13.3332C13.51 4 13.6796 4.07024 13.8046 4.19526C13.9296 4.32029 13.9998 4.48986 13.9998 4.66667V10.6667ZM3.33317 1.33333V10.6667H8.6665V1.33333H3.33317ZM4.6665 5.33333H7.33317V6.66667H4.6665V5.33333ZM4.6665 2.66667H7.33317V4H4.6665V2.66667Z" fill="#2A2A2A"/>
+            </svg>                         
+            <p class="pfl-bin-desc">Idiomas:</p>              
+          </div>
+          <div class="pfl-bin-value">
+            <!-- <p *ngIf="!isEdit">{{ form.get('idiomas').value }}</p> -->
+
+            <!-- CRIAR COMPONENTE -->
+            <div class="item-selection">              
+              <div class="item-select" *ngFor="let item of list; let i = index">
+                <select class="idiomas" (click)="setIdioma(i, $event, 'loc')">
+                  <option *ngFor="let location of item.locs">{{ location }}</option>
+                </select>
+                <select class="idiomas" (click)="setIdioma(i, $event, 'tp')">
+                  <option *ngFor="let type of item.typeLocs" >{{ type }}</option>
+                </select>
+
+                <!-- BTN - CLEAR -->
+                <button class="btn-clear-position" (click)="clearIdioma(i)">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#2A2A2A"/>
+                  </svg>
+                </button>                  
+              </div>
+
+              <!-- ADD + IDIOMAS -->
+              <button class="btn-add-idioma" (click)="addIdioma()">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.66634 5.66659H5.66634V9.66659H4.33301V5.66659H0.333008V4.33325H4.33301V0.333252H5.66634V4.33325H9.66634V5.66659Z" fill="#2A2A2A"/>
+                </svg>                  
+                Adicionar idioma
+              </button>
+            </div>
+
+          </div>
+        </li>
+
+
+      </ul>
+
+
+    </div>
   </div>
 </form>
