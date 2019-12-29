@@ -11,6 +11,11 @@ const routes: Routes = [
     component: SummaryComponent,
     children: [
       {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'profile'
+      },
+      {
         path: 'profile',
         component: ProfileComponent
       },
