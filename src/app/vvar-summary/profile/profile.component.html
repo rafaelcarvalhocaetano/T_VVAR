@@ -29,6 +29,12 @@
   </div>
 
   <div class="pfl-info">
+
+    <div class="btn-mobile">
+      <button type="submit" class="btn-edit" id="pfl-btn-submited" (click)="edited()">{{ isEdit ? 'Salvar' : 'Editar Perfil' }}</button>
+    </div>
+
+
     <!-- nick-name -->
     <div class="pfl-edt">
       <div class="nick-name">
@@ -121,10 +127,8 @@
 
     <!-- INFORMAÇÕES BÁSICAS -->
     <div class="pfl-bin">
-      <p class="pfl-bin-title">Informações básicas</p>
-
-
       <ul class="pfl-bin-list">
+        <p class="pfl-bin-title">Informações básicas</p>
 
         <!-- CRIAR COMPONENTE -->
         <li class="ibp pfl-bin-item">
@@ -172,10 +176,14 @@
             <p class="pfl-bin-desc">Idiomas:</p>              
           </div>
           <div class="pfl-bin-value">
-            <!-- <p *ngIf="!isEdit">{{ form.get('idiomas').value }}</p> -->
+            <ul *ngIf="!isEdit">
+              <li *ngFor="let item of form.get('idiomas').value">
+                <p>{{ item.loc }} ({{ item.type.toLowerCase() }}) </p>
+              </li>
+            </ul>
 
             <!-- CRIAR COMPONENTE -->
-            <div class="item-selection">              
+            <div class="item-selection" *ngIf="isEdit">              
               <div class="item-select" *ngFor="let item of list; let i = index">
                 <select class="idiomas" (click)="setIdioma(i, $event, 'loc')">
                   <option *ngFor="let location of item.locs">{{ location }}</option>
@@ -203,11 +211,8 @@
 
           </div>
         </li>
-
-
       </ul>
-
-
     </div>
   </div>
+
 </form>
