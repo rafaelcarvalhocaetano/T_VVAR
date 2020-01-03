@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  public show: boolean;
+
+  public showSideNav() {
+    this.show = true;
+  }
+
+  closed(event: boolean) {
+    this.show = event;
+  }
+
+
+
 }

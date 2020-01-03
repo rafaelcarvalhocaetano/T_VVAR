@@ -2,6 +2,8 @@
 
 .container {
   box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
   .banner {
     width: 100vw;
     height: 142.22px;
