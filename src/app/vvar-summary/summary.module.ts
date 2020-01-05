@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ImageCropperModule } from 'ngx-image-cropper';
+
 import { SummaryComponent } from './summary.component';
 import { SummaryRoutingModule } from './summary-routing.module';
 import { ProfileComponent } from './profile/profile.component';
@@ -11,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    SummaryRoutingModule
+    SummaryRoutingModule,
+    ImageCropperModule
   ]
 })
 export class SummaryModule { }

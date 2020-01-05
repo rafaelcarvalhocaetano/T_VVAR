@@ -9,23 +9,25 @@
       </svg>        
       <p>Cartão de visita</p>
     </div>
-    <svg *ngIf="isEdit" id="cmr" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g filter="url(#filter0_d)">
-      <circle cx="26" cy="22" r="18" fill="#DC3145"/>
-      </g>
-      <path d="M23.828 15L21.828 17H18V29H34V17H30.172L28.172 15H23.828ZM23 13H29L31 15H35C35.2652 15 35.5196 15.1054 35.7071 15.2929C35.8946 15.4804 36 15.7348 36 16V30C36 30.2652 35.8946 30.5196 35.7071 30.7071C35.5196 30.8946 35.2652 31 35 31H17C16.7348 31 16.4804 30.8946 16.2929 30.7071C16.1054 30.5196 16 30.2652 16 30V16C16 15.7348 16.1054 15.4804 16.2929 15.2929C16.4804 15.1054 16.7348 15 17 15H21L23 13ZM26 28C24.5413 28 23.1424 27.4205 22.1109 26.3891C21.0795 25.3576 20.5 23.9587 20.5 22.5C20.5 21.0413 21.0795 19.6424 22.1109 18.6109C23.1424 17.5795 24.5413 17 26 17C27.4587 17 28.8576 17.5795 29.8891 18.6109C30.9205 19.6424 31.5 21.0413 31.5 22.5C31.5 23.9587 30.9205 25.3576 29.8891 26.3891C28.8576 27.4205 27.4587 28 26 28ZM26 26C26.9283 26 27.8185 25.6313 28.4749 24.9749C29.1313 24.3185 29.5 23.4283 29.5 22.5C29.5 21.5717 29.1313 20.6815 28.4749 20.0251C27.8185 19.3687 26.9283 19 26 19C25.0717 19 24.1815 19.3687 23.5251 20.0251C22.8688 20.6815 22.5 21.5717 22.5 22.5C22.5 23.4283 22.8688 24.3185 23.5251 24.9749C24.1815 25.6313 25.0717 26 26 26Z" fill="white"/>
-      <defs>
-      <filter id="filter0_d" x="0" y="0" width="52" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-      <feOffset dy="4"/>
-      <feGaussianBlur stdDeviation="4"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-      </filter>
-      </defs>
-    </svg>     
+    <button id="cmr" (click)="openModalImage()">
+      <svg *ngIf="isEdit" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d)">
+        <circle cx="26" cy="22" r="18" fill="#DC3145"/>
+        </g>
+        <path d="M23.828 15L21.828 17H18V29H34V17H30.172L28.172 15H23.828ZM23 13H29L31 15H35C35.2652 15 35.5196 15.1054 35.7071 15.2929C35.8946 15.4804 36 15.7348 36 16V30C36 30.2652 35.8946 30.5196 35.7071 30.7071C35.5196 30.8946 35.2652 31 35 31H17C16.7348 31 16.4804 30.8946 16.2929 30.7071C16.1054 30.5196 16 30.2652 16 30V16C16 15.7348 16.1054 15.4804 16.2929 15.2929C16.4804 15.1054 16.7348 15 17 15H21L23 13ZM26 28C24.5413 28 23.1424 27.4205 22.1109 26.3891C21.0795 25.3576 20.5 23.9587 20.5 22.5C20.5 21.0413 21.0795 19.6424 22.1109 18.6109C23.1424 17.5795 24.5413 17 26 17C27.4587 17 28.8576 17.5795 29.8891 18.6109C30.9205 19.6424 31.5 21.0413 31.5 22.5C31.5 23.9587 30.9205 25.3576 29.8891 26.3891C28.8576 27.4205 27.4587 28 26 28ZM26 26C26.9283 26 27.8185 25.6313 28.4749 24.9749C29.1313 24.3185 29.5 23.4283 29.5 22.5C29.5 21.5717 29.1313 20.6815 28.4749 20.0251C27.8185 19.3687 26.9283 19 26 19C25.0717 19 24.1815 19.3687 23.5251 20.0251C22.8688 20.6815 22.5 21.5717 22.5 22.5C22.5 23.4283 22.8688 24.3185 23.5251 24.9749C24.1815 25.6313 25.0717 26 26 26Z" fill="white"/>
+        <defs>
+        <filter id="filter0_d" x="0" y="0" width="52" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="4"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+        </filter>
+        </defs>
+      </svg>
+    </button>
   </div>
 
   <div class="pfl-info">
@@ -216,3 +218,59 @@
   </div>
 
 </form>
+
+<div class="pfl-modal" *ngIf="isEdit">
+  <div class="card">
+    <!-- CARD TITLE -->
+    <div class="card-title">
+      <h3>Editar foto do perfil</h3>
+      <button (click)="isEdit = false">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#2A2A2A"/>
+        </svg>  
+      </button>      
+    </div>
+
+    <!-- CARD BODY -->
+    <div class="card-body">
+      <image-cropper
+      class="img-cooper"
+      [imageChangedEvent]="imageChangedEvent"
+      format="png"
+      [alignImage]="'center'"
+      [aspectRatio]="3/3"
+      [roundCropper]="true"
+      [cropperMinWidth]="100"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded()"
+      (cropperReady)="cropperReady()"
+      (loadImageFailed)="loadImageFailed($event)"
+      ></image-cropper>
+      <!-- <img [src]="croppedImage" /> -->
+    </div>
+
+    <!-- CARD FOOTER -->
+    <div class="card-footer">
+      <div class="card-select">
+        <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.66683 10.6667H12.3335V6H13.6668V11.3333C13.6668 11.5101 13.5966 11.6797 13.4716 11.8047C13.3465 11.9298 13.177 12 13.0002 12H1.00016C0.823352 12 0.653782 11.9298 0.528758 11.8047C0.403734 11.6797 0.333496 11.5101 0.333496 11.3333V6H1.66683V10.6667ZM7.66683 4V8.66667H6.3335V4H3.00016L7.00016 0L11.0002 4H7.66683Z" fill="#DC3145"/>
+        </svg>
+        <label for="img">Carregar foto</label>
+        <input type="file" id="img" name="img" (change)="fileChangeEvent($event)">
+      </div>
+      <div class="card-zoom">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.33333 5.4L2.66667 4.06667L6.33333 7.73333L8.66667 5.4L10.6667 7.4V1.33333H1.33333V5.4ZM1.33333 7.286V10.6667H3.4L5.39067 8.67667L2.66667 5.95267L1.33333 7.286ZM5.286 10.6667H10.6667V9.286L8.66667 7.286L5.286 10.6667ZM0.666667 0H11.3333C11.5101 0 11.6797 0.0702379 11.8047 0.195262C11.9298 0.320286 12 0.489856 12 0.666667V11.3333C12 11.5101 11.9298 11.6797 11.8047 11.8047C11.6797 11.9298 11.5101 12 11.3333 12H0.666667C0.489856 12 0.320286 11.9298 0.195262 11.8047C0.0702379 11.6797 0 11.5101 0 11.3333V0.666667C0 0.489856 0.0702379 0.320286 0.195262 0.195262C0.320286 0.0702379 0.489856 0 0.666667 0ZM8.33333 4.66667C8.06812 4.66667 7.81376 4.56131 7.62623 4.37377C7.43869 4.18624 7.33333 3.93188 7.33333 3.66667C7.33333 3.40145 7.43869 3.1471 7.62623 2.95956C7.81376 2.77202 8.06812 2.66667 8.33333 2.66667C8.59855 2.66667 8.8529 2.77202 9.04044 2.95956C9.22798 3.1471 9.33333 3.40145 9.33333 3.66667C9.33333 3.93188 9.22798 4.18624 9.04044 4.37377C8.8529 4.56131 8.59855 4.66667 8.33333 4.66667Z" fill="#6E6E6E"/>
+        </svg>
+        <hr>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 8.1L4 6.1L9.5 11.6L13 8.1L16 11.1V2H2V8.1ZM2 10.929V16H5.1L8.086 13.015L4 8.929L2 10.929ZM7.929 16H16V13.929L13 10.929L7.929 16ZM1 0H17C17.2652 0 17.5196 0.105357 17.7071 0.292893C17.8946 0.48043 18 0.734784 18 1V17C18 17.2652 17.8946 17.5196 17.7071 17.7071C17.5196 17.8946 17.2652 18 17 18H1C0.734784 18 0.48043 17.8946 0.292893 17.7071C0.105357 17.5196 0 17.2652 0 17V1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0ZM12.5 7C12.1022 7 11.7206 6.84196 11.4393 6.56066C11.158 6.27936 11 5.89782 11 5.5C11 5.10218 11.158 4.72064 11.4393 4.43934C11.7206 4.15804 12.1022 4 12.5 4C12.8978 4 13.2794 4.15804 13.5607 4.43934C13.842 4.72064 14 5.10218 14 5.5C14 5.89782 13.842 6.27936 13.5607 6.56066C13.2794 6.84196 12.8978 7 12.5 7Z" fill="#6E6E6E"/>
+        </svg>          
+      </div>
+      <div class="card-actions">
+        <button class="btn-cancel">Cancelar</button>
+        <button class="btn-submit">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 @Component({
   selector: 'vvar-profile',
@@ -9,12 +10,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ProfileComponent implements OnInit {
 
   public form: FormGroup;
+  public isEdit: boolean = true;
 
-  public isEdit: boolean;
   public bio = 'Doze anos de experiência no setor imobiliário. '
   + 'Amplo conhecimento sobre diversos tipos de empreendimento para ajudá-lo a '
   + 'encontrar o melhor investimento para você, tanto residencial quanto comercial.';
-
 
   public idiomas: any [] = [];
 
@@ -25,6 +25,10 @@ export class ProfileComponent implements OnInit {
     locs: this.locations,
     typeLocs: this.listType
   }];
+
+  // IMG
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
 
   constructor(
     private fb: FormBuilder
@@ -52,7 +56,6 @@ export class ProfileComponent implements OnInit {
   public edited() {
     this.isEdit = !this.isEdit;
   }
-
 
   // ADD - OK
   public addIdioma() {
@@ -95,6 +98,29 @@ export class ProfileComponent implements OnInit {
   public clearIdioma(index: number) {
     this.list.splice(index, 1);
     this.form.get('idiomas').value.splice(index, 1);
+  }
+
+  // SEND IMG
+  public openModalImage() {
+    console.log(' data ');
+  }
+
+  // IMG
+  fileChangeEvent(event: any): void {
+    this.imageChangedEvent = event;
+  }
+  imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+  }
+  imageLoaded() {
+      // show cropper
+  }
+  cropperReady() {
+      // cropper ready
+  }
+  loadImageFailed(event) {
+      // show message
+      console.log(' img ', event)
   }
 
 }

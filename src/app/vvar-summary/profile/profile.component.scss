@@ -331,6 +331,139 @@
   }
 }
 
+.pfl-modal {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: #2A2A2A;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .card {
+    width: 856px;
+    background-color: #FFF;
+    border-radius: 7px;
+
+    .card-title {
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+      box-sizing: border-box;
+      border: 1px solid #F2F2F2;
+      border-radius: 7px 7px 0 0;
+      h3 {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        color: #2A2A2A;
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .card-body {
+      height: 530px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .img-cooper {
+        width: 500px;
+        height: 300px;
+      }
+    }
+
+    .card-footer {
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px;
+      align-items: center;
+      box-sizing: border-box;
+      border-top: 1px solid #F2F2F2;
+      .card-select {
+        width: 135px;
+        display: flex;
+        align-items: center;
+        label {
+          padding-left: 20px;
+          position: absolute;
+          width: 122px;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 19px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          color: #DC3145;
+          cursor: pointer;
+        }
+        input[type=file] {
+          display: none;
+        }
+      }
+      .card-zoom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        hr {
+          margin: 0 5px;
+          width: 200px;
+        }
+      }
+      .card-actions {
+        .btn-cancel {
+          width: 88px;
+          height: 44px;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: center;
+          color: #DC3145;
+          cursor: pointer;
+
+          border: none;
+          background-color: transparent;
+          &:focus {
+            outline: none;
+          }
+        }
+        .btn-submit {
+          width: 88px;
+          height: 44px;
+          border: none;
+          background: #DC3145;
+          border-radius: 7px;
+          color: #FFF;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
 // (min-width: 1024px) and (max-width: 1440px)
 @include table-xd {
   .profile-container {
