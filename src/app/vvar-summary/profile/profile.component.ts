@@ -10,7 +10,7 @@ import { ImageCroppedEvent } from 'ngx-image-cropper';
 export class ProfileComponent implements OnInit {
 
   public form: FormGroup;
-  public isEdit: boolean = true;
+  public isEdit: boolean;
 
   public bio = 'Doze anos de experiência no setor imobiliário. '
   + 'Amplo conhecimento sobre diversos tipos de empreendimento para ajudá-lo a '
