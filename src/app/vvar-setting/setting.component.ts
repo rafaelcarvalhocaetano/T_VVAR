@@ -8,6 +8,34 @@ import { Component, OnInit } from '@angular/core';
 export class SettingComponent implements OnInit {
 
   public isOpenModal = false;
+  public list = [
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+    'List ',
+  ]
 
   constructor() { }
 
