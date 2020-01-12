@@ -1,14 +1,137 @@
+@import '../../../assets/styles/vvar_mixis.scss';
+
 .mdl {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1050;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  outline: 0;
-  background-color: rgba(255, 99, 71, 0.274);
-  .mdl-ctn {
+  overflow-y: scroll;
+  background-color: rgba(51, 51, 51, 0.637);
+  @include scrollbar();
+  display: flex;
+  justify-content: center;
 
+  .mdl-ctn {
+    margin: 120px auto;
+    position: absolute;
+    width: 856px;
+    height: 1136px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+
+    .mdl-bnr {
+      width: 856px;
+      border-radius: 7px 7px 0 0;
+      box-sizing: border-box;
+      .mdl-img-banner {
+        img {
+          border-radius: 7px 7px 0 0;
+        }
+      }
+      .mdl-img-pfl {
+        width: 196px;
+        img {
+          position: absolute;
+          top: 52px;
+          border: 2px solid #F2F2F2;
+          width: 196px;
+          height: 196px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .mdl-nuser {
+      margin-top: 160px;
+      .nick {
+        height: 40px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 36px;
+        color: #2A2A2A;
+      }
+      .mdl-spc {
+        display: none;
+      }
+      .user-name {
+        height: 40px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 36px;
+        color: #2A2A2A;
+      }
+    }
+
+    .mdl-group {
+      display: flex;
+      .mdl-item {
+        margin-right: 24px;
+        label {
+          height: 14px;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          color: #2A2A2A;
+        }
+        input {
+          margin-top: 4px;
+          width: 306px;
+          height: 44px;
+          border: none;
+          background: #FFFFFF;
+          border: 1px solid #F2F2F2;
+          box-sizing: border-box;
+          border-radius: 7px;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 19px;
+          color: #ACACAC;
+          padding-left: 14px;
+          &:focus {
+            outline: none;
+          }
+        }
+        textarea {
+          margin-top: 16px;
+          height: 104px;
+          width: 636px;
+          resize: none;
+          padding: 14px;
+          border: none;
+          background: #FFFFFF;
+          border: 1px solid #F2F2F2;
+          box-sizing: border-box;
+          border-radius: 7px;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 19px;
+          color: #ACACAC;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    .md-ls {
+      margin-top: 64px;
+    }
+    .md-eml {
+      margin-top: 32px;
+    }
   }
 }
