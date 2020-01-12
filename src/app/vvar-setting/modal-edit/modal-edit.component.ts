@@ -46,6 +46,41 @@ export class ModalEditComponent implements OnInit {
       creci: ['185168-F'],
       enterprise: ['Lopes São Paulo'],
       idiomas: [[], Validators.maxLength(300)]
+
+
+      // banner_image_url: ['dasdas'],
+      // banner_image_url: ['https://www.lopes.com.br/assets/img/common/logo-lopes-hd.png'],
+      //        profile_image_url: ['https://www.lopes.com.br/assets/img/common/coracao-lopes.png'],
+      // -      name: [],
+      // -      nickname: [],
+      // +      name: ['Rafael Carvalho'],
+      // +      nickname: ['Bichão'],
+      //        is_editable: [true],
+      // -      state: ['dasdas'],
+      // -      country: ['dasdas'],
+      // -      phone: ['dasdas'],
+      // -      alternative_phone: ['dasdas'],
+      // -      email: ['dasdas'],
+      // +      state: ['Daly'],
+      // +      country: ['Afeganistão'],
+      // +      phone: ['+55 11 999999999'],
+      // +      alternative_phone: ['+55 11 988888888'],
+      // +      email: ['rafael@gmail.com'],
+      //        bio: [this.bio],
+      // -      technical_designation: [],
+      // -      creci: [],
+      // -      company: [],
+      // +      technical_designation: ['Corretor associado'],
+      // +      creci: ['HGKIU76F34-F'],
+      // +      company: ['E-deploy'],
+      //        languages: [
+      //          [
+      //            {
+      //            }
+      //          ]
+      //        ],
+      // -      profile_url: []
+      // +      profile_url: ['https://www.lopes.com.br/perfil/gioCampos']
     });
   }
 

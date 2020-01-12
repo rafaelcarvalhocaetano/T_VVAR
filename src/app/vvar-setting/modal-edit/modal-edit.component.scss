@@ -30,28 +30,76 @@
     min-height: 1136px;
     height: auto;
     background: #FFFFFF;
-    box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.15);
     border-radius: 7px;
     .mdl-bnr {
       width: 856px;
       border-radius: 7px 7px 0 0;
       box-sizing: border-box;
       .mdl-img-banner {
+        box-sizing: border-box;
+        cursor: pointer;
+        border-radius: 7px 7px 0 0;
+        span {
+          display: none;
+        }
         img {
+          width: 100%;
+          height: 100%;
           border-radius: 7px 7px 0 0;
+          &:hover {
+            filter: grayscale(50%);
+            -webkit-filter:grayscale(50%);
+          }
+          &:hover + span {
+            display: inline-block;
+            height: 20px;
+            position: absolute;
+            margin: 95px 18px 8px 0;
+            right: 0;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 19px;
+            color: #FFFFFF;
+          }
         }
       }
       .mdl-img-pfl {
         width: 196px;
+        height: 196px;
+        position: absolute;
+        border-radius: 50%;
         display: flex;
         justify-content: center;
+        cursor: pointer;
+        top: 52px;
+        span {
+          display: none;
+        }
         img {
-          position: absolute;
-          top: 52px;
           border: 2px solid #F2F2F2;
           width: 196px;
           height: 196px;
           border-radius: 50%;
+          box-sizing: border-box;
+          &:hover {
+            filter: grayscale(50%);
+            -webkit-filter:grayscale(50%);
+          }
+        }
+        &:hover > span {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 19px;
+          text-align: center;
+          margin-top: 45%;
+          color: #FFFFFF;
         }
       }
     }
