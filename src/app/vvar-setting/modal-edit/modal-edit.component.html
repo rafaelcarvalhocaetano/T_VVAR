@@ -1,6 +1,5 @@
-<form [formGroup]="form" class="mdl" id="mdl-form">
+<form [formGroup]="form" class="mdl" id="mdl-form" *ngIf="showEdit">
   <div class="mdl-ctn">
-
     <!-- BANNER && IMAGEM PERFIL -->
     <div class="mdl-bnr">
       <div class="mdl-img-banner">
@@ -48,7 +47,6 @@
         <small class="mdl-count">{{ form.get('bio').value.length + '/' + '300'}}</small>
       </div>
     </div>
-
     <!-- IDIOMA -->
     <div class="mrg mdl-idioma">
       <div class="mdl-list">
@@ -81,8 +79,8 @@
     </div>
 
     <div class="mrg mdl-actions">
-      <button type="submit" class="btn btn-submit" id="btn-submit-form">Salvar Alterações</button>
-      <button type="button" class="btn btn-cancel" id="btn-cancel-form">Cancelar</button>
+      <button type="submit" class="btn btn-submit" id="btn-submit-form" (click)="submitForm()">Salvar Alterações</button>
+      <button type="button" class="btn btn-cancel" id="btn-cancel-form" (click)="showEdit = false; sendOpen.emit(showEdit)">Cancelar</button>
     </div>
   </div>
 </form>

@@ -4,4 +4,4 @@
     <p>Item</p>
   </div>
 </div>
-<vvar-modal-edit *ngIf="isOpenModal"></vvar-modal-edit>
+<vvar-modal-edit [showEdit]="isOpenModal" (sendOpen)="getClosed($event)"></vvar-modal-edit>

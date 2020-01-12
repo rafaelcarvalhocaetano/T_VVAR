@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./modal-edit.component.scss']
 })
 export class ModalEditComponent implements OnInit {
+
+  @Input()
+  public showEdit = false;
+
+  @Output() sendOpen = new EventEmitter<boolean>();
 
   public form: FormGroup;
 
@@ -97,6 +102,11 @@ export class ModalEditComponent implements OnInit {
   public clearIdioma(index: number) {
     this.list.splice(index, 1);
     this.form.get('languages').value.splice(index, 1);
+  }
+
+  // SUBMITED
+  public submitForm() {
+    console.log(' data ', this.form.value);
   }
 
 }

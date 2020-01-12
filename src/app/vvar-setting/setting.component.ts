@@ -74,4 +74,9 @@ export class SettingComponent implements OnInit {
     this.isOpenModal = !this.isOpenModal;
   }
 
+
+  public getClosed(event: boolean): boolean {
+    return this.isOpenModal = event;
+  }
+
 }
