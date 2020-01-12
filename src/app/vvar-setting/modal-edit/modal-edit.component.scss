@@ -27,7 +27,6 @@
     margin: 120px auto;
     position: absolute;
     width: 856px;
-    // height: 1136px;
     min-height: 1136px;
     height: auto;
     background: #FFFFFF;
@@ -133,6 +132,17 @@
           &:focus {
             outline: none;
           }
+        }
+        .mdl-count {
+          width: 636px;
+          display: flex;
+          justify-content: flex-end;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+          color: #6F6F6F;
         }
       }
     }

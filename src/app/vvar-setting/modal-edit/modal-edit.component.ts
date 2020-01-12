@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'vvar-modal-edit',
@@ -45,7 +45,7 @@ export class ModalEditComponent implements OnInit {
       designacao_tecnica: ['Corretor Associado'],
       creci: ['185168-F'],
       enterprise: ['Lopes São Paulo'],
-      idiomas: [[]]
+      idiomas: [[], Validators.maxLength(300)]
     });
   }
 
