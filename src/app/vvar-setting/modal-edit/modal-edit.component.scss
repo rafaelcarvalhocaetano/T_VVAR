@@ -56,7 +56,7 @@
       }
     }
     .mdl-nuser {
-      margin-top: 0;
+      margin-top: 160px;
       .nick {
         height: 40px;
         font-family: Open Sans;
@@ -145,9 +145,6 @@
           font-size: 12px;
           line-height: 16px;
           color: #6F6F6F;
-        }
-        &:nth-child(1) {
-          margin-top: 26px;
         }
       }
     }
@@ -302,13 +299,13 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         .mdl-img-banner {
           width: 100%;
           height: 49px;
         }
         .mdl-img-pfl {
           width: 100%;
+          margin: 0 auto;
           img {
             width: 196px;
             height: 201.63px;
@@ -319,7 +316,7 @@
         }
       }
       .mdl-nuser {
-        margin: 200px 25px 0 25px;
+        margin: 200px 25px 26px 25px;
         width: 328px;
         display: flex;
         align-items: center;
@@ -354,6 +351,7 @@
           }
           &:nth-child(1) {
             margin-bottom: 24px;
+
           }
           &:nth-child(2) {
             margin-bottom: 24px;
