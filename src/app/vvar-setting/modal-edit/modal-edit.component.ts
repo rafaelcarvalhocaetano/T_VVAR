@@ -36,51 +36,23 @@ export class ModalEditComponent implements OnInit {
 
   private initForm() {
     this.form = this.fb.group({
+      banner_image_url: [],
+      profile_image_url: [],
+      name: [],
+      nickname: [],
+      is_editable: [],
       state: ['São Paulo'],
       country: ['Brasil'],
-      phone_main: ['+55 11 90009 8866'],
-      phone_alternative: ['+55 11 90000 1111'],
+      phone: ['+55 11 90009 8866'],
+      alternative_phone: ['+55 11 90000 1111'],
       email: ['rapha.pse@outlook.com'],
       bio: [this.bio],
       designacao_tecnica: ['Corretor Associado'],
+      technical_designation: [],
       creci: ['185168-F'],
-      enterprise: ['Lopes São Paulo'],
-      idiomas: [[], Validators.maxLength(300)]
-
-
-      // banner_image_url: ['dasdas'],
-      // banner_image_url: ['https://www.lopes.com.br/assets/img/common/logo-lopes-hd.png'],
-      //        profile_image_url: ['https://www.lopes.com.br/assets/img/common/coracao-lopes.png'],
-      // -      name: [],
-      // -      nickname: [],
-      // +      name: ['Rafael Carvalho'],
-      // +      nickname: ['Bichão'],
-      //        is_editable: [true],
-      // -      state: ['dasdas'],
-      // -      country: ['dasdas'],
-      // -      phone: ['dasdas'],
-      // -      alternative_phone: ['dasdas'],
-      // -      email: ['dasdas'],
-      // +      state: ['Daly'],
-      // +      country: ['Afeganistão'],
-      // +      phone: ['+55 11 999999999'],
-      // +      alternative_phone: ['+55 11 988888888'],
-      // +      email: ['rafael@gmail.com'],
-      //        bio: [this.bio],
-      // -      technical_designation: [],
-      // -      creci: [],
-      // -      company: [],
-      // +      technical_designation: ['Corretor associado'],
-      // +      creci: ['HGKIU76F34-F'],
-      // +      company: ['E-deploy'],
-      //        languages: [
-      //          [
-      //            {
-      //            }
-      //          ]
-      //        ],
-      // -      profile_url: []
-      // +      profile_url: ['https://www.lopes.com.br/perfil/gioCampos']
+      company: ['Lopes São Paulo'],
+      languages: [[], Validators.maxLength(300)],
+      profile_url: []
     });
   }
 
@@ -92,8 +64,8 @@ export class ModalEditComponent implements OnInit {
       typeLocs: this.listType
     });
 
-    if (this.form.get('idiomas').value !== null) {
-      this.form.get('idiomas').value.map(x => this.idiomas.push(x));
+    if (this.form.get('languages').value !== null) {
+      this.form.get('languages').value.map(x => this.idiomas.push(x));
     }
 
     this.list.map(x => {
@@ -105,13 +77,13 @@ export class ModalEditComponent implements OnInit {
         type: x.typeLocs[0]
       });
     });
-    this.form.get('idiomas').setValue(this.idiomas);
+    this.form.get('languages').setValue(this.idiomas);
   }
 
     // UPDATE IDIOMA AND TYPE
   public setIdioma(index, event, lt: string) {
-    if (this.form.get('idiomas').value !== null) {
-      this.form.get('idiomas').value.map((x, i) => {
+    if (this.form.get('languages').value !== null) {
+      this.form.get('languages').value.map((x, i) => {
         if (index === i && lt === 'loc') {
           x.loc = event.srcElement.value;
         } else if (index === i && lt === 'tp') {
@@ -124,7 +96,7 @@ export class ModalEditComponent implements OnInit {
   // CLEAR - OK
   public clearIdioma(index: number) {
     this.list.splice(index, 1);
-    this.form.get('idiomas').value.splice(index, 1);
+    this.form.get('languages').value.splice(index, 1);
   }
 
 }

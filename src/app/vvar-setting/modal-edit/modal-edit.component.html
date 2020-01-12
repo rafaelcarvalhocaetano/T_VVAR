@@ -1,35 +1,34 @@
-<form class="mdl" id="mdl-form">
+<form [formGroup]="form" class="mdl" id="mdl-form">
   <div class="mdl-ctn">
 
     <!-- BANNER && IMAGEM PERFIL -->
     <div class="mdl-bnr">
       <div class="mdl-img-banner">
-        <img src="../../../assets/svg/img.svg" alt="Logo Lopes Brasil">
+        <img [src]="form.get('banner_image_url').value" alt="Logo Lopes Brasil">
         <span>Alterar Cover</span>
       </div>
       <div class="mrg mdl-img-pfl">
-        <img src="../../../assets/svg/vn.jpg" alt="Logo Lopes Brasil">
+        <img [src]="form.get('profile_image_url').value" alt="Logo Lopes Brasil">
         <span>Alterar Foto</span>
       </div>
-
     </div>
 
     <!-- NAME USER -->
     <div class="mrg mdl-nuser">
-      <p class="nick">Wollner</p>
+      <p class="nick">{{ form.get('nickname').value }}</p>
       <p class="mdl-spc">-</p>
-      <p class="user-name">Giovani José Campos</p>
+      <p class="user-name">{{ form.get('name').value }}</p>
     </div>
 
     <!-- PHONE USER -->
     <div class="mrg mdl-group md-ls">
       <div class="mdl-item">
         <label for="telephone">Telefone Principal</label>
-        <input type="tel" id="telephone" name="telephone" placeholder="+00 00 00000-0000" tabindex='0'>
+        <input type="tel" formControlName="phone" id="telephone" name="telephone" placeholder="+00 00 00000-0000" tabindex='0'>
       </div>
       <div class="mdl-item">
         <label for="phone-alternative">Telefone Alternativo</label>
-        <input type="tel" id="phone-alternative" name="phone-alternative" placeholder="+00 00 00000-0000">
+        <input type="tel" formControlName="alternative_phone" id="phone-alternative" name="phone-alternative" placeholder="+00 00 00000-0000">
       </div>
     </div>
 
@@ -37,7 +36,7 @@
     <div class="mrg mdl-group md-eml">
       <div class="mdl-item">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="corretor@lopes.com.br" >
+        <input type="email" id="email" formControlName="email" name="email" placeholder="corretor@lopes.com.br" >
       </div>
     </div>
 
@@ -45,7 +44,7 @@
     <div class="mrg mdl-group md-eml">
       <div class="mdl-item">
         <label class="mdl-lb-bio" for="bio">Biografia</label>
-        <textarea type="text" id="bio" name="bio" placeholder="Escreva um breve resumo sobre você."></textarea>
+        <textarea type="text" formControlName="bio" id="bio" name="bio" placeholder="Escreva um breve resumo sobre você."></textarea>
         <small class="mdl-count">{{ form.get('bio').value.length + '/' + '300'}}</small>
       </div>
     </div>
