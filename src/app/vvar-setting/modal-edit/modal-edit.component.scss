@@ -347,22 +347,33 @@
       overflow-x: hidden;
       .mdl-bnr {
         width: 100%;
+        min-width: 360px;
+        height: 49px;
+        border-radius: 0;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        align-items: center;
         .mdl-img-banner {
           width: 100%;
-          height: 49px;
+          box-sizing: border-box;
+          cursor: pointer;
+          border-radius: 0;
+          img {
+            width: 100%;
+            border-radius:0;
+            background-color: #000;
+            &:hover + span {
+              display: inline-block;
+              height: 20px;
+              position: absolute;
+              padding: 0;
+              right: 0;
+            }
+          }
         }
         .mdl-img-pfl {
-          width: 100%;
-          margin: 0 auto;
-          img {
-            width: 196px;
-            height: 201.63px;
-            top: 25px;
-            border: 2px solid #F2F2F2;
-            border-radius: 50%;
-          }
+          top: 25px;
         }
       }
       .mdl-nuser {
