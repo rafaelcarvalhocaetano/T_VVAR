@@ -12,16 +12,27 @@
   @include scrollbar();
   display: flex;
   justify-content: center;
-
+  .btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+  .mrg {
+    margin: 0 110px;
+  }
   .mdl-ctn {
     margin: 120px auto;
     position: absolute;
     width: 856px;
-    height: 1136px;
+    // height: 1136px;
+    min-height: 1136px;
+    height: auto;
     background: #FFFFFF;
     box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.15);
     border-radius: 7px;
-
     .mdl-bnr {
       width: 856px;
       border-radius: 7px 7px 0 0;
@@ -43,7 +54,6 @@
         }
       }
     }
-
     .mdl-nuser {
       margin-top: 160px;
       .nick {
@@ -68,7 +78,6 @@
         color: #2A2A2A;
       }
     }
-
     .mdl-group {
       display: flex;
       .mdl-item {
@@ -132,6 +141,118 @@
     }
     .md-eml {
       margin-top: 32px;
+    }
+    .mdl-idioma {
+      display: flex;
+      margin-top: 33px;
+      .mdl-list {
+        .mdl-text {
+          height: 26px;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 20px;
+          color: #2A2A2A;
+          margin-bottom: 16px;
+        }
+        .item-selection {
+          display: flex;
+          flex-direction: column;
+          .item-select {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .idiomas {
+              display: flex;
+              flex-direction: row;
+              padding-left: 12px;
+              width: 196px;
+              height: 36px;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              background: transparent url('../../../assets/svg/icon.svg') 95% no-repeat;
+              border: 1px solid #F2F2F2;
+              box-sizing: border-box;
+              border-radius: 7px;
+              cursor: pointer;
+              font-family: Open Sans;
+              font-size: 12px;
+              line-height: 16px;
+              color: #2A2A2A;
+              margin-bottom: 16px;
+              &:focus {
+                outline: none;
+              }
+
+              &:nth-child(1) {
+                margin-right: 16px;
+              }
+              &:nth-child(2) {
+                margin-right: 32px;
+              }
+            }
+            .btn-clear-position {
+              margin-bottom: 16px;
+              border: none;
+              background-color: transparent;
+              cursor: pointer;
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+          .btn-add-idioma {
+            width: 145px;
+            height: 44px;
+            margin: 14px 0 55px 0;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 19px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #DC3145;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+    .mdl-actions {
+      display: flex;
+      margin-bottom: 47px;
+      .btn-submit {
+        width: 160px;
+        height: 46px;
+        background: #D6283D;
+        border-radius: 7px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        color: #FFFFFF;
+        margin-right: 32px;
+      }
+      .btn-cancel {
+        width: 160px;
+        height: 46px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: start;
+        color: #D6283D;
+      }
     }
   }
 }

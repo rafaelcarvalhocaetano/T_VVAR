@@ -345,7 +345,6 @@
     width: 856px;
     background-color: #FFF;
     border-radius: 7px;
-
     .card-title {
       height: 60px;
       display: flex;
@@ -373,7 +372,6 @@
         }
       }
     }
-
     .card-body {
       height: 530px;
       display: flex;
@@ -384,7 +382,6 @@
         height: 300px;
       }
     }
-
     .card-footer {
       height: 60px;
       display: flex;
@@ -437,7 +434,6 @@
           text-align: center;
           color: #DC3145;
           cursor: pointer;
-
           border: none;
           background-color: transparent;
           &:focus {
@@ -452,7 +448,6 @@
           border-radius: 7px;
           color: #FFF;
           cursor: pointer;
-
           &:focus {
             outline: none;
           }
